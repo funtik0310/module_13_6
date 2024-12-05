@@ -75,6 +75,10 @@ async def send_calories(message, state):
     await message.answer(f'Ваша норма калорий {result} в день' )
     await state.finish()
 
+@dp.message_handler()
+async def all_massages(message):
+    print('Введите команду /start, чтобы начать общение.')
+    await message.answer('Введите команду /start, чтобы начать общение.')
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
